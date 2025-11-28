@@ -1,0 +1,328 @@
+/* General Reset and Base Styles */
+:root {
+    --color-primary: #8e2de2; /* Purple/Violet Accent */
+    --color-secondary: #4a00e0; 
+    --color-background: #121212; /* Dark Background */
+    --color-card-bg: #1e1e1e; /* Slightly Lighter Card */
+    --color-text-light: #e0e0e0; /* Light Text */
+    --color-text-dark: #b0b0b0; 
+    --color-link: #a76ff0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: var(--color-background);
+    color: var(--color-text-light);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header (Hero Section) */
+.hero {
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.hero .subtitle {
+    font-size: 1.1em;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.contact-info a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.95em;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: var(--color-text-dark);
+}
+
+.contact-info i {
+    margin-right: 5px;
+}
+
+/* Main Content Sections */
+main {
+    padding: 40px 0;
+}
+
+.card {
+    background-color: var(--color-card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: var(--color-primary);
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+h2 i {
+    margin-right: 10px;
+}
+
+/* Timeline/List Styles (Education, Committees, Organization) */
+.timeline-item {
+    padding-left: 20px;
+    border-left: 3px solid var(--color-text-dark);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    border: 2px solid var(--color-background);
+}
+
+.timeline-item .title {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--color-text-light);
+}
+
+.timeline-item .subtitle, .timeline-item .grade {
+    color: var(--color-text-dark);
+    font-size: 0.9em;
+    margin: 3px 0 5px 0;
+}
+
+.timeline-item ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 5px;
+}
+
+.timeline-item li {
+    margin-bottom: 5px;
+    color: var(--color-text-dark);
+}
+
+/* Training Section */
+.bullet-list ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.bullet-list li {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+/* Projects Section */
+#projects {
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    background-color: var(--color-card-bg);
+}
+
+.project-card {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--color-text-dark);
+    align-items: center;
+}
+
+.project-card:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.project-details {
+    flex: 1;
+}
+
+.project-media {
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px; 
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.project-media img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.project-media img:hover {
+    transform: scale(1.05);
+}
+
+.project-media .image-caption {
+    font-size: 0.8em;
+    text-align: center;
+    padding: 5px 0;
+    background-color: #0d0d0d;
+    color: var(--color-text-dark);
+}
+
+.project-card.reversed {
+    flex-direction: row-reverse;
+}
+
+.project-details h3 {
+    color: var(--color-link);
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.project-details p {
+    color: var(--color-text-dark);
+    margin-bottom: 10px;
+}
+
+.project-role {
+    font-style: italic;
+    margin-top: 10px;
+    color: var(--color-text-light);
+}
+
+.tech-stack {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.tech-item {
+    display: inline-block;
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--color-secondary);
+}
+
+.btn i {
+    margin-right: 5px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: var(--color-card-bg);
+    border-top: 1px solid var(--color-background);
+    color: var(--color-text-dark);
+    font-size: 0.9em;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .project-card, .project-card.reversed {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-media {
+        order: -1; /* Puts image above details on mobile for standard card */
+        max-width: 100%;
+    }
+
+    .project-card.reversed .project-media {
+        order: -1; /* Puts image above details on mobile for reversed card too */
+    }
+
+    .tech-stack {
+        text-align: center;
+    }
+
+    .project-links {
+        text-align: center;
+    }
+}
